@@ -297,13 +297,14 @@ class GoogleAuth(ApiAttributeMixin):
         and client email for a Service account.
         :raises: AuthError, InvalidConfigError
         """
-        # print(self.client_config)
-        print(self._client_config)
-        credentials, _ = google.auth.default(
-            scopes=self.settings["oauth_scope"]
-        )
-        self._credentials = credentials
-        return
+        # # print(self.client_config)
+        # print(self._client_config)
+        # credentials, _ = google.auth.default(
+        #     scopes=self.settings["oauth_scope"]
+        # )
+        # self._credentials = credentials
+        # return
+
         client_service_json = self.client_config.get("client_json_file_path")
 
         if client_service_json:
