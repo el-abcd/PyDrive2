@@ -304,6 +304,8 @@ class GoogleAuth(ApiAttributeMixin):
         # )
         # self._credentials = credentials
         # return
+        client_service_json = None
+
         try:
             client_service_json = self.client_config.get("client_json_file_path")
         except FileNotFoundError:
