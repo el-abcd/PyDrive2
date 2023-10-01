@@ -304,8 +304,11 @@ class GoogleAuth(ApiAttributeMixin):
         # )
         # self._credentials = credentials
         # return
+        try:
+            client_service_json = self.client_config.get("client_json_file_path")
+        except FileNotFoundError:
+            # FileNotFoundError: [Errno 2] No such file or directory: 'client_secrets.json'
 
-        client_service_json = self.client_config.get("client_json_file_path")
 
         if client_service_json:
             additional_config = {}
